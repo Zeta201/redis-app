@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      compoennt: worker
+  template:
+    metadata:
+      labels:
+        compoennt: worker
+    spec:
+      containers:
+        - name: worker
+          image: 992220449/complex-worker
